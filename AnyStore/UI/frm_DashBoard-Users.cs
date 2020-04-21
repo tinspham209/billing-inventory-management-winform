@@ -62,5 +62,11 @@ namespace AnyStore
             frm_DealerCustomer DeaCust = new frm_DealerCustomer();
             DeaCust.Show();
         }
+
+        private void purchaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_PurchaseAndSales purchase = new frm_PurchaseAndSales();
+            purchase.Show();
+        }
     }
 }

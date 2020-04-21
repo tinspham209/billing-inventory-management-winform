@@ -32,6 +32,7 @@
             this.purchaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salesFormsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dealerAndCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_LoggedInUser = new System.Windows.Forms.Label();
             this.lb_User = new System.Windows.Forms.Label();
             this.lb_SHead = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.lb_AppFName = new System.Windows.Forms.Label();
             this.pnl_Footer = new System.Windows.Forms.Panel();
             this.lb_Footer = new System.Windows.Forms.Label();
-            this.dealerAndCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnl_Footer.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +64,7 @@
             this.purchaseToolStripMenuItem.Name = "purchaseToolStripMenuItem";
             this.purchaseToolStripMenuItem.Size = new System.Drawing.Size(101, 29);
             this.purchaseToolStripMenuItem.Text = "Purchase";
+            this.purchaseToolStripMenuItem.Click += new System.EventHandler(this.purchaseToolStripMenuItem_Click);
             // 
             // salesFormsToolStripMenuItem
             // 
@@ -77,6 +78,13 @@
             this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
             this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(103, 29);
             this.inventoryToolStripMenuItem.Text = "Inventory";
+            // 
+            // dealerAndCustomerToolStripMenuItem
+            // 
+            this.dealerAndCustomerToolStripMenuItem.Name = "dealerAndCustomerToolStripMenuItem";
+            this.dealerAndCustomerToolStripMenuItem.Size = new System.Drawing.Size(202, 29);
+            this.dealerAndCustomerToolStripMenuItem.Text = "Dealer and Customer";
+            this.dealerAndCustomerToolStripMenuItem.Click += new System.EventHandler(this.dealerAndCustomerToolStripMenuItem_Click);
             // 
             // lbl_LoggedInUser
             // 
@@ -149,13 +157,6 @@
             this.lb_Footer.Size = new System.Drawing.Size(307, 24);
             this.lb_Footer.TabIndex = 0;
             this.lb_Footer.Text = "Developed by : PHAM VAN TIN";
-            // 
-            // dealerAndCustomerToolStripMenuItem
-            // 
-            this.dealerAndCustomerToolStripMenuItem.Name = "dealerAndCustomerToolStripMenuItem";
-            this.dealerAndCustomerToolStripMenuItem.Size = new System.Drawing.Size(202, 29);
-            this.dealerAndCustomerToolStripMenuItem.Text = "Dealer and Customer";
-            this.dealerAndCustomerToolStripMenuItem.Click += new System.EventHandler(this.dealerAndCustomerToolStripMenuItem_Click);
             // 
             // frm_DashBoard_Users
             // 
