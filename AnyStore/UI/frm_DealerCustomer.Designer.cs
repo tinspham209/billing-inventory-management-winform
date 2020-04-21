@@ -34,7 +34,7 @@
             this.btn_Add = new System.Windows.Forms.Button();
             this.txt_Search = new System.Windows.Forms.TextBox();
             this.lbl_Search = new System.Windows.Forms.Label();
-            this.dgv_Users = new System.Windows.Forms.DataGridView();
+            this.dgv_DeaCust = new System.Windows.Forms.DataGridView();
             this.txt_DeaCustID = new System.Windows.Forms.TextBox();
             this.lbl_DeaCustID = new System.Windows.Forms.Label();
             this.cmb_Type = new System.Windows.Forms.ComboBox();
@@ -50,7 +50,7 @@
             this.pictureBox_Close = new System.Windows.Forms.PictureBox();
             this.lbl_Header = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Users)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DeaCust)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Close)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,7 @@
             this.btn_Delete.TabIndex = 60;
             this.btn_Delete.Text = "DELETE";
             this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Update
             // 
@@ -80,6 +81,7 @@
             this.btn_Update.TabIndex = 59;
             this.btn_Update.Text = "UPDATE";
             this.btn_Update.UseVisualStyleBackColor = false;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Add
             // 
@@ -93,6 +95,7 @@
             this.btn_Add.TabIndex = 58;
             this.btn_Add.Text = "ADD";
             this.btn_Add.UseVisualStyleBackColor = false;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // txt_Search
             // 
@@ -101,6 +104,7 @@
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(419, 24);
             this.txt_Search.TabIndex = 57;
+            this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             // 
             // lbl_Search
             // 
@@ -112,13 +116,14 @@
             this.lbl_Search.TabIndex = 56;
             this.lbl_Search.Text = "Search";
             // 
-            // dgv_Users
+            // dgv_DeaCust
             // 
-            this.dgv_Users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Users.Location = new System.Drawing.Point(311, 69);
-            this.dgv_Users.Name = "dgv_Users";
-            this.dgv_Users.Size = new System.Drawing.Size(478, 309);
-            this.dgv_Users.TabIndex = 55;
+            this.dgv_DeaCust.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_DeaCust.Location = new System.Drawing.Point(311, 69);
+            this.dgv_DeaCust.Name = "dgv_DeaCust";
+            this.dgv_DeaCust.Size = new System.Drawing.Size(478, 309);
+            this.dgv_DeaCust.TabIndex = 55;
+            this.dgv_DeaCust.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_DeaCust_RowHeaderMouseClick);
             // 
             // txt_DeaCustID
             // 
@@ -135,9 +140,9 @@
             this.lbl_DeaCustID.Font = new System.Drawing.Font("Source Code Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DeaCustID.Location = new System.Drawing.Point(10, 42);
             this.lbl_DeaCustID.Name = "lbl_DeaCustID";
-            this.lbl_DeaCustID.Size = new System.Drawing.Size(88, 17);
+            this.lbl_DeaCustID.Size = new System.Drawing.Size(24, 17);
             this.lbl_DeaCustID.TabIndex = 53;
-            this.lbl_DeaCustID.Text = "DeaCust ID";
+            this.lbl_DeaCustID.Text = "ID";
             // 
             // cmb_Type
             // 
@@ -277,7 +282,7 @@
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.lbl_Search);
-            this.Controls.Add(this.dgv_Users);
+            this.Controls.Add(this.dgv_DeaCust);
             this.Controls.Add(this.txt_DeaCustID);
             this.Controls.Add(this.lbl_DeaCustID);
             this.Controls.Add(this.cmb_Type);
@@ -295,7 +300,8 @@
             this.Name = "frm_DealerCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_DealerCustomer";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Users)).EndInit();
+            this.Load += new System.EventHandler(this.frm_DealerCustomer_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DeaCust)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Close)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -311,7 +317,7 @@
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.TextBox txt_Search;
         private System.Windows.Forms.Label lbl_Search;
-        private System.Windows.Forms.DataGridView dgv_Users;
+        private System.Windows.Forms.DataGridView dgv_DeaCust;
         private System.Windows.Forms.TextBox txt_DeaCustID;
         private System.Windows.Forms.Label lbl_DeaCustID;
         private System.Windows.Forms.ComboBox cmb_Type;
