@@ -65,6 +65,7 @@
             this.btn_Delete.TabIndex = 60;
             this.btn_Delete.Text = "DELETE";
             this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Update
             // 
@@ -78,6 +79,7 @@
             this.btn_Update.TabIndex = 59;
             this.btn_Update.Text = "UPDATE";
             this.btn_Update.UseVisualStyleBackColor = false;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Add
             // 
@@ -91,6 +93,7 @@
             this.btn_Add.TabIndex = 58;
             this.btn_Add.Text = "ADD";
             this.btn_Add.UseVisualStyleBackColor = false;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // txt_Search
             // 
@@ -117,6 +120,8 @@
             this.dgv_Products.Name = "dgv_Products";
             this.dgv_Products.Size = new System.Drawing.Size(478, 309);
             this.dgv_Products.TabIndex = 55;
+            this.dgv_Products.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Products_CellContentClick);
+            this.dgv_Products.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Products_RowHeaderMouseClick);
             // 
             // txt_ProductID
             // 

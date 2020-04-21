@@ -1,4 +1,5 @@
-﻿using AnyStore.DAL;
+﻿using AnyStore.BLL;
+using AnyStore.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +20,9 @@ namespace AnyStore.UI
         }
 
         DAL_categories cdal = new DAL_categories();
-
+        BLL_Products p = new BLL_Products();
+        DAL_Products pdal = new DAL_Products();
+        DAL_User udal = new DAL_User();
         private void cmb_Gender_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -46,6 +49,130 @@ namespace AnyStore.UI
             //specify display member & value for combobox
             cmb_Category.DisplayMember = "title";
             cmb_Category.ValueMember = "title";
+
+            //load all the products in data grid view
+            DataTable dt = pdal.Select();
+            dgv_Products.DataSource = dt;
+        }
+
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            
+
+
+            //Getting data from UI
+            p.name = txt_Name.Text;
+            p.category = cmb_Category.Text;
+            p.description = txt_Description.Text;
+            p.rate = decimal.Parse(txt_Rate.Text);
+            p.qty = 0;
+            p.added_date = DateTime.Now;
+
+            //getting username of the logged in user
+
+            string loggedUser = frm_Login.loggedIn;
+
+            BLL_User usr = udal.GetIdFromUsername(loggedUser);
+            p.added_by = usr.id;
+
+            // Inserting data into db
+            bool success = pdal.Insert(p);
+            if (success == true)
+            {
+                MessageBox.Show("Product Added Successfully.");
+                clear();
+            }
+            else
+            {
+                MessageBox.Show("Failed to add new product.");
+            }
+
+            //Refreshing data grid view
+            DataTable dt = pdal.Select();
+            dgv_Products.DataSource = dt;
+
+        }
+
+        public void clear()
+        {
+            txt_ProductID.Text = "";
+            txt_Name.Text = "";
+            txt_Description.Text = "";
+            txt_Rate.Text = "";
+            txt_Search.Text = "";
+        }
+
+        private void dgv_Products_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgv_Products_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //Get the index of particular row
+            int rowIndex = e.RowIndex;
+            txt_ProductID.Text = dgv_Products.Rows[rowIndex].Cells[0].Value.ToString();
+            txt_Name.Text = dgv_Products.Rows[rowIndex].Cells[1].Value.ToString();
+            cmb_Category.Text = dgv_Products.Rows[rowIndex].Cells[2].Value.ToString();
+            txt_Description.Text = dgv_Products.Rows[rowIndex].Cells[3].Value.ToString();
+            txt_Rate.Text = dgv_Products.Rows[rowIndex].Cells[4].Value.ToString();
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            //Get the values from User UI
+            p.id = int.Parse(txt_ProductID.Text);
+            p.name = txt_Name.Text;
+            p.category = cmb_Category.Text;
+            p.description = txt_Description.Text;
+            p.rate = decimal.Parse(txt_Rate.Text);
+            p.added_date = DateTime.Now;
+
+            //getting username of the logged in user
+
+            string loggedUser = frm_Login.loggedIn;
+            BLL_User usr = udal.GetIdFromUsername(loggedUser);
+            p.added_by = usr.id;
+
+
+            //Updating data into database
+            bool success = pdal.Update(p);
+            if (success == true)
+            {
+                MessageBox.Show("Product successfully updated");
+                clear();
+
+                //Refreshing data grid view
+                DataTable dt = pdal.Select();
+                dgv_Products.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Failed to update product");
+            }
+            
+            
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            //Getting user id from Form
+            p.id = int.Parse(txt_ProductID.Text);
+
+            bool success = pdal.Delete(p);
+            if (success == true)
+            {
+                MessageBox.Show("Product successfully deleted");
+                clear();
+                //Refreshing data grid view
+                DataTable dt = pdal.Select();
+                dgv_Products.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Failed to delete product");
+            }
+            
         }
     }
 }
