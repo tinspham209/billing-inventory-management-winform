@@ -60,7 +60,7 @@ namespace AnyStore.DAL
                 String sql = "INSERT INTO tbl_products (name, category, description, rate, qty, added_date, added_by) VALUES (@name, @category, @description, @rate, @qty, @added_date, @added_by)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
-                cmd.Parameters.AddWithValue("@first_name", p.name);
+                cmd.Parameters.AddWithValue("@name", p.name);
                 cmd.Parameters.AddWithValue("@category", p.category);
                 cmd.Parameters.AddWithValue("@description", p.description);
                 cmd.Parameters.AddWithValue("@rate", p.rate);
@@ -99,7 +99,7 @@ namespace AnyStore.DAL
             SqlConnection conn = new SqlConnection(myconnstrng);
             try
             {
-                string sql = "UPDATE tbl_products SET name=@name, category=@category, description=@description, rate=@rate, qty=@qty added_date=@added_date, added_by=@added_by WHERE id=@id";
+                string sql = "UPDATE tbl_products SET name=@name, category=@category, description=@description, rate=@rate, added_date=@added_date, added_by=@added_by WHERE id=@id";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@name", p.name);
