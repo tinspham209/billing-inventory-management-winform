@@ -39,6 +39,7 @@
             this.lb_AppFName = new System.Windows.Forms.Label();
             this.pnl_Footer = new System.Windows.Forms.Panel();
             this.lb_Footer = new System.Windows.Forms.Label();
+            this.dealerAndCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnl_Footer.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +51,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.purchaseToolStripMenuItem,
             this.salesFormsToolStripMenuItem,
-            this.inventoryToolStripMenuItem});
+            this.inventoryToolStripMenuItem,
+            this.dealerAndCustomerToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1975, 33);
@@ -148,10 +150,18 @@
             this.lb_Footer.TabIndex = 0;
             this.lb_Footer.Text = "Developed by : PHAM VAN TIN";
             // 
+            // dealerAndCustomerToolStripMenuItem
+            // 
+            this.dealerAndCustomerToolStripMenuItem.Name = "dealerAndCustomerToolStripMenuItem";
+            this.dealerAndCustomerToolStripMenuItem.Size = new System.Drawing.Size(202, 29);
+            this.dealerAndCustomerToolStripMenuItem.Text = "Dealer and Customer";
+            this.dealerAndCustomerToolStripMenuItem.Click += new System.EventHandler(this.dealerAndCustomerToolStripMenuItem_Click);
+            // 
             // frm_DashBoard_Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1975, 585);
             this.Controls.Add(this.lb_SHead);
             this.Controls.Add(this.lb_Name);
@@ -189,5 +199,6 @@
         private System.Windows.Forms.Label lb_AppFName;
         private System.Windows.Forms.Panel pnl_Footer;
         private System.Windows.Forms.Label lb_Footer;
+        private System.Windows.Forms.ToolStripMenuItem dealerAndCustomerToolStripMenuItem;
     }
 }

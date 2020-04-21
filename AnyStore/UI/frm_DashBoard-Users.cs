@@ -56,5 +56,11 @@ namespace AnyStore
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void dealerAndCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_DealerCustomer DeaCust = new frm_DealerCustomer();
+            DeaCust.Show();
+        }
     }
 }
