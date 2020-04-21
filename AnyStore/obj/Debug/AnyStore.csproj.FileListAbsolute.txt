@@ -1,0 +1,15 @@
+C:\Users\PC\source\repos\AnyStore\AnyStore\bin\Debug\AnyStore.exe.config
+C:\Users\PC\source\repos\AnyStore\AnyStore\bin\Debug\AnyStore.exe
+C:\Users\PC\source\repos\AnyStore\AnyStore\bin\Debug\AnyStore.pdb
+C:\Users\PC\source\repos\AnyStore\AnyStore\obj\Debug\AnyStore.csprojAssemblyReference.cache
+C:\Users\PC\source\repos\AnyStore\AnyStore\obj\Debug\AnyStore.frm_AdminDashBoard.resources
+C:\Users\PC\source\repos\AnyStore\AnyStore\obj\Debug\AnyStore.frm_DashBoard_Users.resources
+C:\Users\PC\source\repos\AnyStore\AnyStore\obj\Debug\AnyStore.Properties.Resources.resources
+C:\Users\PC\source\repos\AnyStore\AnyStore\obj\Debug\AnyStore.csproj.GenerateResource.cache
+C:\Users\PC\source\repos\AnyStore\AnyStore\obj\Debug\AnyStore.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\AnyStore\AnyStore\obj\Debug\AnyStore.exe
+C:\Users\PC\source\repos\AnyStore\AnyStore\obj\Debug\AnyStore.pdb
+C:\Users\PC\source\repos\AnyStore\AnyStore\obj\Debug\AnyStore.UI.frm_Users.resources
+C:\Users\PC\source\repos\AnyStore\AnyStore\obj\Debug\AnyStore.UI.frm_Login.resources
+C:\Users\PC\source\repos\AnyStore\AnyStore\obj\Debug\AnyStore.UI.frm_Categories.resources
+C:\Users\PC\source\repos\AnyStore\AnyStore\obj\Debug\AnyStore.UI.frm_Products.resources
