@@ -175,6 +175,39 @@ namespace AnyStore.DAL
             return isSuccess;
         }
         #endregion
-    
+        #region Search product on db usingKeywords
+        public DataTable Search(string keywords)
+        {
+            // Static Method to connect db
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            // ToolBar hold the data from db
+
+            DataTable dt = new DataTable();
+            try
+            {
+                // SQL Query to Get data from db
+                String sql = "SELECT * FROM tbl_products WHERE id LIKE '%" + keywords + "%' OR name LIKE '%" + keywords + "%' OR category LIKE '%" + keywords + "%' ";
+                //For executing Command
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                //Getting data from db
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                //db connection open
+                conn.Open();
+                //fill data in dataTable
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+        #endregion
     }
 }
