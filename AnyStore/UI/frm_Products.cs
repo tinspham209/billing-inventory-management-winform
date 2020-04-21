@@ -174,5 +174,23 @@ namespace AnyStore.UI
             }
             
         }
+
+        private void txt_Search_TextChanged(object sender, EventArgs e)
+        {
+            //get keyword from textbox
+            string keywords = txt_Search.Text;
+
+            //check if the keyword has value or not
+            if (keywords != null)
+            {
+                DataTable dt = pdal.Search(keywords);
+                dgv_Products.DataSource = dt;
+            }
+            else
+            {
+                DataTable dt = pdal.Select();
+                dgv_Products.DataSource = dt;
+            }
+        }
     }
 }
