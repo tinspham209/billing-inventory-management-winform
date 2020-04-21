@@ -155,12 +155,12 @@ namespace AnyStore.UI
             bool success = dal.Delete(u);
             if (success == true)
             {
-                MessageBox.Show("User successfully updated");
+                MessageBox.Show("User successfully deleted");
                 clear();
             }
             else
             {
-                MessageBox.Show("Failed to update user");
+                MessageBox.Show("Failed to delete user");
             }
             //Refreshing data grid view
             DataTable dt = dal.Select();
