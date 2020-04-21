@@ -41,6 +41,7 @@
             this.lb_AppFName = new System.Windows.Forms.Label();
             this.lb_Name = new System.Windows.Forms.Label();
             this.lb_SHead = new System.Windows.Forms.Label();
+            this.dealerAndCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Footer.SuspendLayout();
             this.menuStrip_Top.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +75,7 @@
             this.usersToolStripMenuItem,
             this.categoryToolStripMenuItem,
             this.productsToolStripMenuItem,
+            this.dealerAndCustomerToolStripMenuItem,
             this.inventoryToolStripMenuItem,
             this.transactionsToolStripMenuItem});
             this.menuStrip_Top.Location = new System.Drawing.Point(0, 0);
@@ -169,6 +171,13 @@
             this.lb_SHead.Text = "Billing and Inventory Management";
             this.lb_SHead.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // dealerAndCustomerToolStripMenuItem
+            // 
+            this.dealerAndCustomerToolStripMenuItem.Name = "dealerAndCustomerToolStripMenuItem";
+            this.dealerAndCustomerToolStripMenuItem.Size = new System.Drawing.Size(202, 29);
+            this.dealerAndCustomerToolStripMenuItem.Text = "Dealer and Customer";
+            this.dealerAndCustomerToolStripMenuItem.Click += new System.EventHandler(this.dealerAndCustomerToolStripMenuItem_Click);
+            // 
             // frm_AdminDashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,6 +222,7 @@
         private System.Windows.Forms.Label lb_AppFName;
         private System.Windows.Forms.Label lb_Name;
         private System.Windows.Forms.Label lb_SHead;
+        private System.Windows.Forms.ToolStripMenuItem dealerAndCustomerToolStripMenuItem;
     }
 }
 
