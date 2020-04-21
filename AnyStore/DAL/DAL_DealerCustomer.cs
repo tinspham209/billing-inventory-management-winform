@@ -60,7 +60,7 @@ namespace AnyStore.DAL
                 // SQL Query to Get data from db
                 String sql = "INSERT INTO tbl_dea_cust (type, name, email, contact, address, added_date, added_by) VALUES (@type, @name, @email, @contact, @address, @added_date, @added_by)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@title", dc.type);
+                cmd.Parameters.AddWithValue("@type", dc.type);
                 cmd.Parameters.AddWithValue("@name", dc.name);
                 cmd.Parameters.AddWithValue("@email", dc.email);
                 cmd.Parameters.AddWithValue("@contact", dc.contact);
